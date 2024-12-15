@@ -1,0 +1,52 @@
+---
+import '@/styles/globals.css'
+import Layout from '../layouts/Layout.astro';
+import { Navigation } from '@/components/Navigation';
+import { BookShelf } from '@/components/BookShelf';
+
+const comics = [
+  {
+    id: '1',
+    title: 'The Cosmic Journey',
+    cover: 'https://images.unsplash.com/photo-1501432377862-3d0432b87a14?w=800&q=80',
+    description: 'Follow the adventures of Captain Nova as she explores the furthest reaches of space.',
+    pages: [
+      'https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80',
+      'https://images.unsplash.com/photo-1614729939124-032d1e6d3f14?w=800&q=80',
+      'https://images.unsplash.com/photo-1614731922837-0f99f9aa2ff3?w=800&q=80',
+      'https://images.unsplash.com/photo-1614732484003-ef9881555dc3?w=800&q=80'
+    ]
+  },
+  {
+    id: '2',
+    title: 'Urban Legends',
+    cover: 'https://images.unsplash.com/photo-1559661184-5d24b67b6d8b?w=800&q=80',
+    description: 'A noir detective story set in a cyberpunk metropolis.'
+  },
+  {
+    id: '3',
+    title: 'Forest Whispers',
+    cover: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80',
+    description: 'A mystical tale of ancient forest spirits and modern-day explorers.'
+  }
+];
+---
+
+<Layout title="ComicVerse - Digital Comic Library">
+  <Navigation client:load />
+  <main class="container mx-auto pt-20">
+    <section class="py-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-4">Welcome to ComicVerse</h1>
+        <p class="text-lg text-muted-foreground">
+          Explore our collection of original comics and immerse yourself in unique stories.
+        </p>
+      </div>
+    </section>
+    
+    <section class="py-10">
+      <h2 class="text-2xl font-semibold mb-6">Featured Comics</h2>
+      <BookShelf comics={comics} client:load />
+    </section>
+  </main>
+</Layout>
