@@ -1,0 +1,23 @@
+# Ignore artifacts:
+build
+dist
+node_modules
+
+# Ignore environment variables:
+.env
+.env.local
+.env.*.local
+
+# Ignore lock files:
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore specific files and directories:
+public
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
