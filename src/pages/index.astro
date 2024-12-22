@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import { Navigation } from '@/components/Navigation';
 import { BookShelf } from '@/components/BookShelf';
 import { HeroImage } from '@/components/HeroImage';
+import React from "react";
 
 const comics = [
   {
@@ -54,10 +55,10 @@ const comics = [
 
 <Layout title="Der Rote Rächer">
     <Navigation client:load/>
-    <main class="container mx-auto pt-20">
-        <section class="py-10">
+    <main class="container mx-auto pt-20" id="Start">
+        <section class="startPageSection py-10" >
             <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-4xl font-bold mb-4">Der Rote Rächer</h1>
+                <h1 class="text-4xl font-bold mb-4" aria-label="Der rote Rächer">Der R<img src="/logo-grayscale.svg" alt="o" class="h-6 w-6 inline" />te Rächer</h1>
                 <p class="text-lg text-muted-foreground mb-8">
                     Allzeit bereit!
                 </p>
@@ -65,9 +66,27 @@ const comics = [
             </div>
         </section>
 
-        <section class="py-10">
+        <section class="startPageSection py-10" id="Ausgaben">
             <h2 class="text-2xl font-semibold mb-6">Ausgaben</h2>
             <BookShelf comics={comics} client:load/>
+        </section>
+        <section class="startPageSection py-10" id="UeberDenZeichner">
+            <h2 class="text-2xl font-semibold mb-6">Über den Zeichner</h2>
+            <p class="text-lg mb-8">
+                Hallo, ich bin der Zeichner dieser Comics.
+            </p>
+            <p class="text-lg mb-8">
+                Bei dieser Gelegenheit will ich eine Kleinigkeit über mich Schreiben und den Leuten danken die mir geholfen haben diese Meisterwerke zu vollenden. Mein größter Dank gilt meiner Familie die immer für mich da war und mich sehr unterstützt hat. Ich danke meinem Vater, dass er mir geholfen hat diese Internetseite zu programmieren. Ein besonders großer Dank gilt auch meiner Mutter die in mir die Liebe zum Lesen, Zeichnen und Malen geweckt hat, und außerdem meiner Schwester, die mich immer wieder zu neuen Ideen inspiriert hat. Außerdem möchte ich mich noch bei dem Autor des Buches "die Kunst des Zeichnens" bedanken, da dieses Buch der Grundstein für meine Heldenidee war.
+            </p>
+            <p class="text-lg mb-8">
+                Ich finde es ziemlich cool, dass man meine Werke nun auch im Internet bestaunen kann.
+            </p>
+            <p class="text-lg mb-8">
+                Ilias Christoph Pernsteiner
+            </p>
+            <p class="text-lg mb-8">
+                &copy;  Ilias Christoph Pernsteiner, 2024
+            </p>
         </section>
     </main>
 </Layout>

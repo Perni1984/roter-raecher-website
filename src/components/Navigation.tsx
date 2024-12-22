@@ -1,5 +1,5 @@
 import React from "react";
-import { Book, Home, Pencil } from "lucide-react";
+import { BookOpen, Home, MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Navigation() {
@@ -18,20 +18,28 @@ export function Navigation() {
           <span className="font-bold text-xl">Der Rote Rächer</span>
         </div>
         <div className="flex space-x-6">
-          <Button variant="ghost" className="flex items-center space-x-2">
+          <Button
+            variant="ghost"
+            className="flex items-center space-x-2"
+            onClick={() => scrollToSection("Start")}
+          >
             <Home className="h-4 w-4" />
             <span>Start</span>
           </Button>
-          <Button variant="ghost" className="flex items-center space-x-2">
-            <Book className="h-4 w-4" />
+          <Button
+            variant="ghost"
+            className="flex items-center space-x-2"
+            onClick={() => scrollToSection("Ausgaben")}
+          >
+            <BookOpen className="h-4 w-4" />
             <span>Ausgaben</span>
           </Button>
           <Button
             variant="ghost"
             className="flex items-center space-x-2"
-            onClick={() => scrollToSection("aboutTheDrawer")}
+            onClick={() => scrollToSection("UeberDenZeichner")}
           >
-            <Pencil className="h-4 w-4" />
+            <MessageCircle className="h-4 w-4" />
             <span>Über den Zeichner</span>
           </Button>
         </div>
