@@ -18,7 +18,7 @@ interface ComicViewerProps {
   onClose: () => void;
 }
 
-export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
+export function ComicViewer({comic, isOpen, onClose}: ComicViewerProps) {
   const bookRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -51,26 +51,28 @@ export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
               Seite {currentPage + 1} of {pages.length}
             </p>
           </div>
-          
+
           <Button
             variant="ghost"
             size="icon"
             className="absolute top-0 right-4 z-50"
             onClick={onClose}
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4"/>
           </Button>
 
           <div className="w-full h-full flex items-center justify-center">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50"
-              onClick={handlePrevPage}
-              disabled={currentPage === 0}
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
+            {currentPage > 0 && (
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-50"
+                onClick={handlePrevPage}
+                disabled={currentPage === 0}
+              >
+                <ChevronLeft className="h-6 w-6"/>
+              </Button>
+            )}
 
             <div className="w-full h-full flex items-center justify-center">
               <HTMLFlipBook
@@ -100,7 +102,7 @@ export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
                     <img
                       src={page}
                       alt={`Page ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       loading="lazy"
                     />
                   </div>
@@ -108,15 +110,17 @@ export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
               </HTMLFlipBook>
             </div>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50"
-              onClick={handleNextPage}
-              disabled={currentPage === pages.length - 1}
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
+            {currentPage < pages.length - 1 && (
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-50"
+                onClick={handleNextPage}
+                disabled={currentPage === pages.length - 1}
+              >
+                <ChevronRight className="h-6 w-6"/>
+              </Button>
+            )}
           </div>
         </div>
       </DialogContent>
