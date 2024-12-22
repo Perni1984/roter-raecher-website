@@ -7,49 +7,55 @@ import { BookShelf } from '@/components/BookShelf';
 const comics = [
   {
     id: '1',
-    title: 'Ausgabe 1 - Der Rote Rächer vs. der rote Godzilla',
-    cover: './images/ausgabe-1/2024-10-13-0001.jpg',
-    description: 'Follow the adventures of Captain Nova as she explores the furthest reaches of space.',
-    pages: [
-      './images/ausgabe-1/2024-10-13-0001.jpg',
-      'https://images.unsplash.com/photo-1614729939124-032d1e6d3f14?w=800&q=80',
-      'https://images.unsplash.com/photo-1614731922837-0f99f9aa2ff3?w=800&q=80',
-      'https://images.unsplash.com/photo-1614732484003-ef9881555dc3?w=800&q=80'
-    ]
+    title: 'Ausgabe 1 - Der rote Rächer vs. der rote Godzilla',
+    cover: '/src/images/ausgabe-1/2024-10-13-0001.jpg',
+    description: 'Das erste Abenteuer des roten Rächers.',
+    pages: Array.from({ length: 16 }, (_, i) =>
+      `/src/images/ausgabe-1/2024-10-13-${String(i + 1).padStart(4, '0')}.jpg`
+    )
   },
   {
     id: '2',
     title: 'Ausgabe 2 - Noch nicht tot',
-    cover: 'https://images.unsplash.com/photo-1559661184-5d24b67b6d8b?w=800&q=80',
-    description: 'A noir detective story set in a cyberpunk metropolis.'
+    cover: '/src/images/ausgabe-2/2024-12-21-0002.jpg',
+    description: 'Die spannende Fortsetzung der Serie.',
+    pages: Array.from({ length: 15 }, (_, i) =>
+      `/src/images/ausgabe-2/2024-12-21-${String(i + 2).padStart(4, '0')}.jpg`
+    )
   },
   {
     id: '3',
     title: 'Ausgabe 3 - Der Kampf um das Siegel',
-    cover: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80',
-    description: 'A mystical tale of ancient forest spirits and modern-day explorers.'
+    cover: '/src/images/ausgabe-3/2024-12-21-0017.jpg',
+    description: 'Ein mysteriöses Siegel bringt neue Gefahren.',
+    pages: Array.from({ length: 17 }, (_, i) =>
+      `/src/images/ausgabe-3/2024-12-21-${String(i + 17).padStart(4, '0')}.jpg`
+    )
   },
   {
     id: '4',
     title: 'Ausgabe 4 - Der Ausbruch',
-    cover: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80',
-    description: 'A mystical tale of ancient forest spirits and modern-day explorers.'
+    cover: '/src/images/ausgabe-4/2024-12-21-0034.jpg',
+    description: 'Der Rote Rächer steht vor seiner größten Herausforderung.',
+    pages: Array.from({ length: 14 }, (_, i) =>
+      `/src/images/ausgabe-4/2024-12-21-${String(i + 34).padStart(4, '0')}.jpg`
+    )
   },
   {
     id: '5',
     title: 'Ausgabe 5 - Seitenwechsel',
-    cover: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&q=80',
+    cover: '/src/images/ausgabe-1/2024-10-13-0001.jpg', // Placeholder until real cover is available
     description: 'Gerade in Arbeit ... - Erscheinungsdatum Februar 2025'
   }
 ];
 ---
 
-<Layout title="Der rote Rächer">
+<Layout title="Der Rote Rächer">
   <Navigation client:load />
   <main class="container mx-auto pt-20">
     <section class="py-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">Der rote Rächer</h1>
+        <h1 class="text-4xl font-bold mb-4">Der Rote Rächer</h1>
         <p class="text-lg text-muted-foreground">
           Allzeit bereit!
         </p>
