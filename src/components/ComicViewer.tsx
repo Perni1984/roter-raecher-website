@@ -53,7 +53,7 @@ export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
           <div className="absolute top-4 left-4 z-50">
             <h2 className="text-xl font-semibold">{comic?.title}</h2>
             <p className="text-sm text-muted-foreground">
-              Page {currentPage + 1} of {pages.length}
+              Seite {currentPage + 1} of {pages.length}
             </p>
           </div>
           

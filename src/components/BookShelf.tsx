@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from './ui/card';
 import { ComicViewer } from './ComicViewer';
+import { cn } from '@/lib/utils';
 
 interface Comic {
   id: string;
@@ -8,6 +9,7 @@ interface Comic {
   cover: string;
   description: string;
   pages?: string[];
+  grayscale?: boolean;
 }
 
 interface BookShelfProps {
@@ -28,7 +30,7 @@ export function BookShelf({ comics }: BookShelfProps) {
       {comics.map((comic) => (
         <Card 
           key={comic.id}
-          className="cursor-pointer transition-transform hover:scale-105"
+          className={cn(!comic.grayscale && "cursor-pointer transition-transform hover:scale-105")}
           onClick={() => handleComicClick(comic)}
         >
           <CardContent className="p-4">
@@ -36,7 +38,10 @@ export function BookShelf({ comics }: BookShelfProps) {
               <img
                 src={comic.cover}
                 alt={comic.title}
-                className="object-cover w-full h-full"
+                className={cn(
+                  "object-cover w-full h-full",
+                  comic.grayscale && "grayscale opacity-70"
+                )}
               />
             </div>
             <h3 className="mt-4 font-semibold">{comic.title}</h3>
