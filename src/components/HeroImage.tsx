@@ -13,7 +13,7 @@ export function HeroImage({ className }: HeroImageProps) {
   return (
     <>
       <img
-        src="/src/images/ausgabe-0/2024-12-22-0001.jpg"
+        src="/images/ausgabe-0/2024-12-22-0001.jpg"
         alt="Der Rote Rächer Hero"
         className={cn(
           "w-full max-w-3xl mx-auto rounded-lg shadow-lg",
