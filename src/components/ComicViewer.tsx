@@ -37,12 +37,7 @@ export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
   };
 
   // Fallback pages if no pages are provided
-  const fallbackPages = [
-    'https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&q=80',
-    'https://images.unsplash.com/photo-1614729939124-032d1e6d3f14?w=800&q=80',
-    'https://images.unsplash.com/photo-1614731922837-0f99f9aa2ff3?w=800&q=80',
-    'https://images.unsplash.com/photo-1614732484003-ef9881555dc3?w=800&q=80'
-  ];
+  const fallbackPages = [];
 
   const pages = comic?.pages || fallbackPages;
 
@@ -50,7 +45,7 @@ export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-[90vw] h-[90vh]">
         <div className="relative w-full h-full">
-          <div className="absolute top-4 left-4 z-50">
+          <div className="absolute top-0 left-4 z-50">
             <h2 className="text-xl font-semibold">{comic?.title}</h2>
             <p className="text-sm text-muted-foreground">
               Seite {currentPage + 1} of {pages.length}
@@ -60,7 +55,7 @@ export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-4 right-4 z-50"
+            className="absolute top-0 right-4 z-50"
             onClick={onClose}
           >
             <X className="h-4 w-4" />
@@ -84,9 +79,9 @@ export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
                 height={800}
                 size="stretch"
                 minWidth={300}
-                maxWidth={1000}
+                maxWidth={800}
                 minHeight={400}
-                maxHeight={1000}
+                maxHeight={800}
                 showCover={true}
                 className="shadow-xl"
                 onFlip={(e) => setCurrentPage(e.data)}

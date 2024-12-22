@@ -20,7 +20,7 @@ export function BookShelf({ comics }: BookShelfProps) {
   const [selectedComic, setSelectedComic] = useState<Comic | null>(null);
 
   const handleComicClick = (comic: Comic) => {
-    if (comic.id === '1') {
+    if(!comic.grayscale) {
       setSelectedComic(comic);
     }
   };

@@ -11,7 +11,7 @@ const comics = [
     title: 'Ausgabe 1 - Der rote Rächer vs. der rote Godzilla',
     cover: '/src/images/ausgabe-1/2024-10-13-0001.jpg',
     description: 'Das erste Abenteuer des roten Rächers.',
-    pages: Array.from({ length: 16 }, (_, i) =>
+    pages: Array.from({length: 16}, (_, i) =>
       `/src/images/ausgabe-1/2024-10-13-${String(i + 1).padStart(4, '0')}.jpg`
     )
   },
@@ -20,7 +20,7 @@ const comics = [
     title: 'Ausgabe 2 - Noch nicht tot',
     cover: '/src/images/ausgabe-2/2024-12-21-0001.jpg',
     description: 'Die spannende Fortsetzung der Serie.',
-    pages: Array.from({ length: 15 }, (_, i) =>
+    pages: Array.from({length: 15}, (_, i) =>
       `/src/images/ausgabe-2/2024-12-21-${String(i + 1).padStart(4, '0')}.jpg`
     )
   },
@@ -29,7 +29,7 @@ const comics = [
     title: 'Ausgabe 3 - Der Kampf um das Siegel',
     cover: '/src/images/ausgabe-3/2024-12-21-0001.jpg',
     description: 'Die Rückkehr des roten Godzillas.',
-    pages: Array.from({ length: 17 }, (_, i) =>
+    pages: Array.from({length: 17}, (_, i) =>
       `/src/images/ausgabe-3/2024-12-21-${String(i + 1).padStart(4, '0')}.jpg`
     )
   },
@@ -38,7 +38,7 @@ const comics = [
     title: 'Ausgabe 4 - Der Ausbruch',
     cover: '/src/images/ausgabe-4/2024-12-21-0001.jpg',
     description: 'Neuer Superschurke - neues Abenteuer!',
-    pages: Array.from({ length: 14 }, (_, i) =>
+    pages: Array.from({length: 14}, (_, i) =>
       `/src/images/ausgabe-4/2024-12-21-${String(i + 1).padStart(4, '0')}.jpg`
     )
   },
@@ -53,21 +53,21 @@ const comics = [
 ---
 
 <Layout title="Der Rote Rächer">
-  <Navigation client:load />
-  <main class="container mx-auto pt-20">
-    <section class="py-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">Der Rote Rächer</h1>
-        <p class="text-lg text-muted-foreground">
-          Allzeit bereit!
-        </p>
-          <HeroImage client:load className="mb-12" />
-      </div>
-    </section>
-    
-    <section class="py-10">
-      <h2 class="text-2xl font-semibold mb-6">Ausgaben</h2>
-      <BookShelf comics={comics} client:load />
-    </section>
-  </main>
+    <Navigation client:load/>
+    <main class="container mx-auto pt-20">
+        <section class="py-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl font-bold mb-4">Der Rote Rächer</h1>
+                <p class="text-lg text-muted-foreground mb-8">
+                    Allzeit bereit!
+                </p>
+                <HeroImage client:load className="mb-12"/>
+            </div>
+        </section>
+
+        <section class="py-10">
+            <h2 class="text-2xl font-semibold mb-6">Ausgaben</h2>
+            <BookShelf comics={comics} client:load/>
+        </section>
+    </main>
 </Layout>
