@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Card, CardContent } from './ui/card';
-import { ComicViewer } from './ComicViewer';
-import { cn } from '@/lib/utils';
+import React, { useState } from "react";
+import { Card, CardContent } from "./ui/card";
+import { ComicViewer } from "./ComicViewer";
+import { cn } from "@/lib/utils";
 
 interface Comic {
   id: string;
@@ -20,7 +20,7 @@ export function BookShelf({ comics }: BookShelfProps) {
   const [selectedComic, setSelectedComic] = useState<Comic | null>(null);
 
   const handleComicClick = (comic: Comic) => {
-    if(!comic.grayscale) {
+    if (!comic.grayscale) {
       setSelectedComic(comic);
     }
   };
@@ -28,9 +28,12 @@ export function BookShelf({ comics }: BookShelfProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {comics.map((comic) => (
-        <Card 
+        <Card
           key={comic.id}
-          className={cn(!comic.grayscale && "cursor-pointer transition-transform hover:scale-105")}
+          className={cn(
+            !comic.grayscale &&
+              "cursor-pointer transition-transform hover:scale-105",
+          )}
           onClick={() => handleComicClick(comic)}
         >
           <CardContent className="p-4">
@@ -40,7 +43,7 @@ export function BookShelf({ comics }: BookShelfProps) {
                 alt={comic.title}
                 className={cn(
                   "object-cover w-full h-full",
-                  comic.grayscale && "grayscale opacity-70"
+                  comic.grayscale && "grayscale opacity-70",
                 )}
               />
             </div>

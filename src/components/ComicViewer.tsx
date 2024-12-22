@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
-import HTMLFlipBook from 'react-pageflip';
-import { Dialog, DialogContent } from './ui/dialog';
-import { Button } from './ui/button';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import React, { useRef, useState } from "react";
+import HTMLFlipBook from "react-pageflip";
+import { Dialog, DialogContent } from "./ui/dialog";
+import { Button } from "./ui/button";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface Comic {
   id: string;
@@ -18,7 +18,7 @@ interface ComicViewerProps {
   onClose: () => void;
 }
 
-export function ComicViewer({comic, isOpen, onClose}: ComicViewerProps) {
+export function ComicViewer({ comic, isOpen, onClose }: ComicViewerProps) {
   const bookRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -48,7 +48,7 @@ export function ComicViewer({comic, isOpen, onClose}: ComicViewerProps) {
           <div className="absolute top-0 left-4 z-50">
             <h2 className="text-xl font-semibold">{comic?.title}</h2>
             <p className="text-sm text-muted-foreground">
-              Seite {currentPage + 1} of {pages.length}
+              Seite {currentPage + 1} von {pages.length}
             </p>
           </div>
 
@@ -58,7 +58,7 @@ export function ComicViewer({comic, isOpen, onClose}: ComicViewerProps) {
             className="absolute top-0 right-4 z-50"
             onClick={onClose}
           >
-            <X className="h-4 w-4"/>
+            <X className="h-4 w-4" />
           </Button>
 
           <div className="w-full h-full flex items-center justify-center">
@@ -70,7 +70,7 @@ export function ComicViewer({comic, isOpen, onClose}: ComicViewerProps) {
                 onClick={handlePrevPage}
                 disabled={currentPage === 0}
               >
-                <ChevronLeft className="h-6 w-6"/>
+                <ChevronLeft className="h-6 w-6" />
               </Button>
             )}
 
@@ -118,7 +118,7 @@ export function ComicViewer({comic, isOpen, onClose}: ComicViewerProps) {
                 onClick={handleNextPage}
                 disabled={currentPage === pages.length - 1}
               >
-                <ChevronRight className="h-6 w-6"/>
+                <ChevronRight className="h-6 w-6" />
               </Button>
             )}
           </div>
