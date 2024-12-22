@@ -8,20 +8,24 @@ export function Navigation() {
       <div className="container flex h-16 items-center">
         <div className="mr-8 flex items-center space-x-2">
           <Book className="h-6 w-6" />
-          <span className="font-bold text-xl">ComicVerse</span>
+          <span className="font-bold text-xl">Der Rote Rächer</span>
         </div>
         <div className="flex space-x-6">
           <Button variant="ghost" className="flex items-center space-x-2">
             <Home className="h-4 w-4" />
-            <span>Home</span>
+            <span>Start</span>
           </Button>
           <Button variant="ghost" className="flex items-center space-x-2">
             <Book className="h-4 w-4" />
-            <span>Library</span>
+            <span>Ausgaben</span>
           </Button>
           <Button variant="ghost" className="flex items-center space-x-2">
             <Pencil className="h-4 w-4" />
-            <span>Blog</span>
+            <span>Über den Autor</span>
+          </Button>
+          <Button variant="ghost" className="flex items-center space-x-2">
+            <Pencil className="h-4 w-4" />
+            <span>Danksagung</span>
           </Button>
         </div>
       </div>
