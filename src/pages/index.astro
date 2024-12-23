@@ -4,7 +4,8 @@ import Layout from '../layouts/Layout.astro';
 import { Navigation } from '@/components/Navigation';
 import { BookShelf } from '@/components/BookShelf';
 import { HeroImage } from '@/components/HeroImage';
-import React from "react";
+import { CharacterCard } from '@/components/CharacterCard';
+import { characters } from '@/data/characters';
 
 const comics = [
   {
@@ -46,17 +47,25 @@ const comics = [
   {
     id: '5',
     title: 'Ausgabe 5 - Seitenwechsel',
-    cover: '/images/ausgabe-5/2024-12-22-0001.jpg', // Placeholder until real cover is available
+    cover: '/images/ausgabe-5/2024-12-22-0001.jpg',
     description: 'Gerade in Arbeit ... - Erscheinungsdatum Februar 2025',
     grayscale: true
   }
 ];
+
+
+const characterList = Object.entries(characters).map(([id, character]) => ({
+    id,
+    name: character.name,
+    description: character.description,
+    image: character.heroImage
+}));
 ---
 
 <Layout title="Der Rote Rächer">
     <Navigation client:load/>
     <main class="container mx-auto pt-20" id="Start">
-        <section class="startPageSection py-10" >
+        <section class="startPageSection py-10">
             <div class="max-w-3xl mx-auto text-center">
                 <h1 class="text-4xl font-bold mb-4" aria-label="Der rote Rächer">Der R<img src="/logo-grayscale.svg" alt="o" class="h-6 w-6 inline" />te Rächer</h1>
                 <p class="text-lg text-muted-foreground mb-8">
@@ -70,6 +79,16 @@ const comics = [
             <h2 class="text-2xl font-semibold mb-6">Ausgaben</h2>
             <BookShelf comics={comics} client:load/>
         </section>
+
+        <section class="startPageSection py-10" id="Charaktere">
+            <h2 class="text-2xl font-semibold mb-6">Charaktere</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {characterList.map(character => (
+                  <CharacterCard {...character} client:load/>
+                ))}
+            </div>
+        </section>
+
         <section class="startPageSection py-10 px-2" id="UeberDenZeichner">
             <h2 class="text-2xl font-semibold mb-6">Über den Zeichner</h2>
             <p class="text-lg mb-8">

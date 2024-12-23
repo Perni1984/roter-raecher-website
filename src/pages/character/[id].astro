@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PhotoGallery } from '@/components/PhotoGallery';
+import { ArrowLeft } from 'lucide-react';
+import { characters } from '@/data/characters';
+
+export async function getStaticPaths() {
+  return Object.entries(characters).map(([id, character]) => ({
+    params: { id },
+    props: { character },
+  }));
+}
+
+const { character } = Astro.props;
+
+if (!character) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={`${character.name} - Der Rote Rächer`}>
+  <main class="container mx-auto pt-20 px-4">
+    <div class="mb-8">
+      <a href="/#Charaktere" class="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground">
+        <ArrowLeft className="mr-2 h-4 w-4" />
+        Zurück zur Übersicht
+      </a>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="aspect-[21/9] relative overflow-hidden rounded-lg mb-8">
+        <img
+          src={character.heroImage}
+          alt={character.name}
+          class="object-cover w-full h-full"
+        />
+      </div>
+
+      <h1 class="text-4xl font-bold mb-4">{character.name}</h1>
+      <p class="text-xl text-muted-foreground mb-8">{character.description}</p>
+
+      <div class="prose max-w-none mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Biografie</h2>
+        <p class="text-lg">{character.bio}</p>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4">Galerie</h2>
+      <PhotoGallery images={character.gallery} client:load />
+    </div>
+  </main>
+</Layout>

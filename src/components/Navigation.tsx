@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, Home, MessageCircle } from "lucide-react";
+import { BookOpen, Home, MessageCircle, Users } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Navigation() {
@@ -33,6 +33,14 @@ export function Navigation() {
           >
             <BookOpen className="h-4 w-4" />
             <span>Ausgaben</span>
+          </Button>
+          <Button
+            variant="ghost"
+            className="flex items-center space-x-2"
+            onClick={() => scrollToSection("Charaktere")}
+          >
+            <Users className="h-4 w-4" />
+            <span>Charaktere</span>
           </Button>
           <Button
             variant="ghost"
