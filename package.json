@@ -66,7 +66,8 @@
     "tailwindcss": "^3.4.13",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.0.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "yet-another-react-lightbox": "^3.17.0"
   },
   "devDependencies": {
     "prettier": "3.4.2"
