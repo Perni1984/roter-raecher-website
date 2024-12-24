@@ -28,7 +28,7 @@ export const characters = {
   "mr-skull": {
     name: "Mr. Skull / Matthew Parker (vermuteter Name)",
     description:
-      "Ein geheimnisvoller Kleinverbrecher der in die Fänge des roten Godzillas gerät.",
+      "Ein geheimnisvoller Kleinverbrecher der von Michael Shaw angeheuert wird.",
     heroImage:
       "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&q=80",
     bio: "Niemand weiß wirklich, wer er ist. Manche vermuten er heisst Matthew Parker, aber sicher ist nichts. Nachdem ihn der rote Rächer ein paar Mal zusammengeschlagen hat (nach Banküberfällen, Taschendiebstählen und anderen Verbrechen), lässt er sich von Michael Shaw ein Upgrade verpassen. Mit 100.000 Kröten in der Tasche taucht er dann ab.",
@@ -54,7 +54,7 @@ export const characters = {
   "schwarzer-professor": {
     name: "Schwarzer Professor",
     description:
-      "Waffenhändler, Giftmüllhändler und verrückter Professor - eine der schwierigsten Wiedersacher des roten Rächers.",
+      "Waffenhändler, Giftmüllhändler und verrückter Professor - einer der schwierigsten Wiedersacher des roten Rächers.",
     heroImage:
       "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&q=80",
     bio: "Illegale Experimente, Waffen- und Giftmüllhandel und noch viel viel mehr gesetzlich verbotenes Zeugs, der schwarze Professor kennt sich dabei sehr gut aus. Irgendwann wurde er aber ertappt und der Professor konnte verhaftet und 15 Leichen in seinem Labor sichergestellt werden. Doch leider befreite ihn ohne Absicht der rote Rächer und hat ihn nun an der Backe. Er ist sehr gefährlich, da er eine metallene Hand besitzt, die sehr hart zugreifen, Knochen brechen und sogar Laserschüsse abfeuern kann. Außerdem ist er nicht gerade dumm, vielmehr genial. Der rote Rächer muss seine gesamte Kraft aufwenden um ihn besiegen zu können.",
